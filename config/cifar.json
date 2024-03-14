@@ -1,0 +1,7 @@
+{
+    "data": "CIFAR",
+    "batch_size": 128,
+    "bound_params": {
+        "eps": 0.03137
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "data": "MNIST",
+    "batch_size": 256,
+    "bound_params": {
+        "eps": 0.1,
+        "bound_type": "IBP"
+    }
+}

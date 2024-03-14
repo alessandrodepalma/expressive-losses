@@ -1,0 +1,15 @@
+{
+    "data": "CIFAR",
+    "seed": 100,    
+    "training_params": {
+        "method": "robust",
+        "batch_size": 128
+    },
+    "bound_params": {
+        "eps": 0.03137,
+        "bound_opts": {
+            "relu": "adaptive",
+            "exp": "clamp_constant"
+        }
+    }
+}
