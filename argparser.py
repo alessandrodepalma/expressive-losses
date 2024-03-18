@@ -114,8 +114,6 @@ def add_arguments_pgd(parser):
     parser.add_argument('--test_att_step_size', default=None, type=float,
                         help='step size for the attack (relative to epsilon)')
     parser.add_argument('--attack_eps_factor', default=1.0, type=float, help='larger eps ratio for attack')
-    parser.add_argument('--bn_stats_ignore_adv', action='store_true', help='do not use pass over adv. batch for '
-                                                                           'BatchNorm stats')
 
 
 def add_arguments_verification(parser):

@@ -48,7 +48,8 @@ def compute_sabr_perturbation(args, eps, data, adv_data, data_min, data_max, std
     sabr_data_ub = torch.min(sabr_center + norm_sabr_eps, data_max)
     sabr_data_lb = torch.max(sabr_center - norm_sabr_eps, data_min)
     ptb = PerturbationLpNorm(norm=np.inf, eps=norm_sabr_eps, x_L=sabr_data_lb, x_U=sabr_data_ub)
-    x = BoundedTensor(data, ptb)  # data is still passed to compute IBP stats on it, as per the original paper
+    # the center of the ball is unused for IBP on l-inf perts: data is passed for consistency with the other methods
+    x = BoundedTensor(data, ptb)
     return x, sabr_center
 
 

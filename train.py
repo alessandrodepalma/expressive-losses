@@ -133,7 +133,8 @@ def train_or_test(model, model_ori, t, loader, eps_scheduler, opt):
                 adv_output = output
 
             # Upper bound on the robust loss (via IBP)
-            # NOTE: when training, the bounding computation will use the batchnorm stats from the current clean batch
+            # NOTE: when training, the bounding computation will use the BN statistics from the last forward pass: in
+            # this case, from the adversarial points
             if robust or reg:
 
                 if (not args.sabr) or (not train):
