@@ -153,7 +153,7 @@ def train_or_test(model, model_ori, t, loader, eps_scheduler, opt):
 
             if train:
 
-                if (not args.ibpr) and (not args.ccibp) and (not args.mtlibp) and (not args.sabr) and (not args.expibp):
+                if not (args.ccibp or args.mtlibp or args.sabr or args.expibp):
 
                     if reg:
                         loss = compute_reg(args, model, meter, eps, eps_scheduler)
@@ -165,7 +165,7 @@ def train_or_test(model, model_ori, t, loader, eps_scheduler, opt):
                         # warmup phase
                         loss += regular_ce
 
-                elif args.ccibp or args.mtlibp or args.sabr or args.expibp:
+                else:
                     if reg and args.reg_lambda > 0:
                         loss = compute_reg(args, model, meter, eps, eps_scheduler)
                     else:
